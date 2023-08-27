@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NetworkError.swift
 //  
 //
 //  Created by Mohamed El Gedawy on 28/08/2023.
