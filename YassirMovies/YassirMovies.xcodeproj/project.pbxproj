@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895A9FD52A9D58C400BA6D39 /* MovieListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FD42A9D58C400BA6D39 /* MovieListRequest.swift */; };
+		895A9FD72A9D5D5500BA6D39 /* MovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FD62A9D5D5500BA6D39 /* MovieListRepository.swift */; };
+		895A9FDB2A9D5EDC00BA6D39 /* MovieListRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FDA2A9D5EDC00BA6D39 /* MovieListRepositoryProtocol.swift */; };
+		895A9FDF2A9D603D00BA6D39 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FDE2A9D603D00BA6D39 /* MovieModel.swift */; };
+		895A9FE12A9D611B00BA6D39 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FE02A9D611B00BA6D39 /* MovieEntity.swift */; };
+		895A9FE62A9D644E00BA6D39 /* YassirNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 895A9FE52A9D644E00BA6D39 /* YassirNetworking */; };
+		895A9FE82A9D64DC00BA6D39 /* MovieResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FE72A9D64DC00BA6D39 /* MovieResultEntity.swift */; };
+		895A9FEA2A9D658E00BA6D39 /* MovieListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FE92A9D658E00BA6D39 /* MovieListUseCase.swift */; };
 		89AE59532A9BF0CA0008FD12 /* YassirMoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE59522A9BF0CA0008FD12 /* YassirMoviesApp.swift */; };
 		89AE59552A9BF0CA0008FD12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE59542A9BF0CA0008FD12 /* ContentView.swift */; };
 		89AE59572A9BF0CC0008FD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE59562A9BF0CC0008FD12 /* Assets.xcassets */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		895A9FCB2A9C0F6B00BA6D39 /* YassirNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = YassirNetworking; path = ../YassirNetworking; sourceTree = "<group>"; };
+		895A9FD42A9D58C400BA6D39 /* MovieListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRequest.swift; sourceTree = "<group>"; };
+		895A9FD62A9D5D5500BA6D39 /* MovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepository.swift; sourceTree = "<group>"; };
+		895A9FDA2A9D5EDC00BA6D39 /* MovieListRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepositoryProtocol.swift; sourceTree = "<group>"; };
+		895A9FDE2A9D603D00BA6D39 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		895A9FE02A9D611B00BA6D39 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		895A9FE72A9D64DC00BA6D39 /* MovieResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultEntity.swift; sourceTree = "<group>"; };
+		895A9FE92A9D658E00BA6D39 /* MovieListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUseCase.swift; sourceTree = "<group>"; };
 		89AE594F2A9BF0CA0008FD12 /* YassirMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE59522A9BF0CA0008FD12 /* YassirMoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirMoviesApp.swift; sourceTree = "<group>"; };
 		89AE59542A9BF0CA0008FD12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895A9FE62A9D644E00BA6D39 /* YassirNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +88,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		895A9FCA2A9C0F6B00BA6D39 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FCB2A9C0F6B00BA6D39 /* YassirNetworking */,
+			);
+			name = Packages;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		895A9FCC2A9D55BE00BA6D39 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		895A9FCD2A9D55C800BA6D39 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FD32A9D589E00BA6D39 /* Repository */,
+				895A9FD22A9D589900BA6D39 /* DTO */,
+				895A9FD12A9D56AE00BA6D39 /* Requests */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		895A9FCE2A9D55D600BA6D39 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FDD2A9D5F6800BA6D39 /* UseCases */,
+				895A9FDC2A9D5F6300BA6D39 /* Model */,
+				895A9FD82A9D5EBD00BA6D39 /* Interface */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		895A9FCF2A9D55DE00BA6D39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89AE59562A9BF0CC0008FD12 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		895A9FD12A9D56AE00BA6D39 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FD42A9D58C400BA6D39 /* MovieListRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		895A9FD22A9D589900BA6D39 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FE02A9D611B00BA6D39 /* MovieEntity.swift */,
+				895A9FE72A9D64DC00BA6D39 /* MovieResultEntity.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		895A9FD32A9D589E00BA6D39 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FD62A9D5D5500BA6D39 /* MovieListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		895A9FD82A9D5EBD00BA6D39 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FD92A9D5EC600BA6D39 /* Repositories */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		895A9FD92A9D5EC600BA6D39 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FDA2A9D5EDC00BA6D39 /* MovieListRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		895A9FDC2A9D5F6300BA6D39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FDE2A9D603D00BA6D39 /* MovieModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		895A9FDD2A9D5F6800BA6D39 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				895A9FE92A9D658E00BA6D39 /* MovieListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		895A9FE42A9D644E00BA6D39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89AE59462A9BF0CA0008FD12 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +203,7 @@
 				89AE59622A9BF0CC0008FD12 /* YassirMoviesTests */,
 				89AE596C2A9BF0CC0008FD12 /* YassirMoviesUITests */,
 				89AE59502A9BF0CA0008FD12 /* Products */,
+				895A9FE42A9D644E00BA6D39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +220,13 @@
 		89AE59512A9BF0CA0008FD12 /* YassirMovies */ = {
 			isa = PBXGroup;
 			children = (
+				895A9FCF2A9D55DE00BA6D39 /* Resources */,
+				895A9FCE2A9D55D600BA6D39 /* Domain */,
+				895A9FCC2A9D55BE00BA6D39 /* Presentation */,
+				895A9FCD2A9D55C800BA6D39 /* Data */,
+				895A9FCA2A9C0F6B00BA6D39 /* Packages */,
 				89AE59522A9BF0CA0008FD12 /* YassirMoviesApp.swift */,
 				89AE59542A9BF0CA0008FD12 /* ContentView.swift */,
-				89AE59562A9BF0CC0008FD12 /* Assets.xcassets */,
 				89AE59582A9BF0CC0008FD12 /* Preview Content */,
 			);
 			path = YassirMovies;
@@ -143,6 +273,9 @@
 			dependencies = (
 			);
 			name = YassirMovies;
+			packageProductDependencies = (
+				895A9FE52A9D644E00BA6D39 /* YassirNetworking */,
+			);
 			productName = YassirMovies;
 			productReference = 89AE594F2A9BF0CA0008FD12 /* YassirMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -257,7 +390,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895A9FDF2A9D603D00BA6D39 /* MovieModel.swift in Sources */,
+				895A9FD72A9D5D5500BA6D39 /* MovieListRepository.swift in Sources */,
+				895A9FDB2A9D5EDC00BA6D39 /* MovieListRepositoryProtocol.swift in Sources */,
+				895A9FD52A9D58C400BA6D39 /* MovieListRequest.swift in Sources */,
+				895A9FE12A9D611B00BA6D39 /* MovieEntity.swift in Sources */,
+				895A9FEA2A9D658E00BA6D39 /* MovieListUseCase.swift in Sources */,
 				89AE59552A9BF0CA0008FD12 /* ContentView.swift in Sources */,
+				895A9FE82A9D64DC00BA6D39 /* MovieResultEntity.swift in Sources */,
 				89AE59532A9BF0CA0008FD12 /* YassirMoviesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +723,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		895A9FE52A9D644E00BA6D39 /* YassirNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YassirNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89AE59472A9BF0CA0008FD12 /* Project object */;
 }
