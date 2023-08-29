@@ -8,20 +8,23 @@
 import Foundation
 
 struct MovieResultEntity: Codable {
-    var id: String
-    var title: String
-    var overview: String
-    var poster: String
-    var releaseDate: String
+    var id: Int
+    var backdropPath: String
+    var originalLanguage, originalTitle, overview: String
+    var popularity: Double
+    var posterPath, releaseDate, title: String
     var voteAverage: Double
     var voteCount: Int
     
     enum CodingKeys: String, CodingKey {
         case id
-        case title
-        case overview
-        case poster = "poster_path"
+        case backdropPath = "backdrop_path"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case overview, popularity
+        case posterPath = "poster_path"
         case releaseDate = "release_date"
+        case title
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }

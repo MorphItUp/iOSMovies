@@ -10,8 +10,11 @@ import SwiftUI
 @main
 struct YassirMoviesApp: App {
     var body: some Scene {
+        let repo = MovieListRepository()
+        let useCase = MovieListUseCase(movieListRepo: repo)
+        let viewModel = MovieListViewModel(movieListUseCase: useCase)
         WindowGroup {
-            ContentView()
+            MovieListView(viewModel: viewModel)
         }
     }
 }

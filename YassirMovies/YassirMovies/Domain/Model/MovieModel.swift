@@ -8,7 +8,7 @@
 import Foundation
 
 struct MovieModel {
-    var id: String
+    var id: Int
     var title: String
     var overview: String
     var poster: String
