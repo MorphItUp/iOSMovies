@@ -18,7 +18,7 @@ struct MovieEntity: Codable {
     init(
         results: [MovieResultEntity] = [],
         page: Int = 0,
-        totalPages: Int = 0
+        totalPages: Int = 0,
         totalResults: Int = 0
     ) {
         self.results = results
