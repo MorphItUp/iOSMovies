@@ -9,11 +9,15 @@ import Foundation
 import Combine
 import YassirNetworking
 
+protocol MovieListRepositoryProtocol {
+    func getMovieList() -> AnyPublisher<[MovieModel]?, Error>
+}
+
 class MovieListRepository: MovieListRepositoryProtocol {
     
     // MARK: - Properties
     
-    let provider: ServiceProtocol
+    private let provider: ServiceProtocol
         
     // MARK: - Init
     

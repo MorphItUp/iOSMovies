@@ -11,13 +11,15 @@ import SwiftUI
 class AppCoordinator {
     
     // MARK: - Properties
-    let navigationController: UINavigationController
-    let movieViewFactory: MovieViewFactoryProtocol
+    private let navigationController: UINavigationController
+    private let movieViewFactory: MovieViewFactoryProtocol
     
     // MARK: - Init
  
-    init(navigationController: UINavigationController,
-         movieViewFactory: MovieViewFactoryProtocol) {
+    init(
+        navigationController: UINavigationController,
+        movieViewFactory: MovieViewFactoryProtocol
+    ) {
         self.navigationController = navigationController
         self.movieViewFactory = movieViewFactory
     }

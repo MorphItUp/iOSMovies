@@ -20,7 +20,6 @@ struct MovieDetailsView<ViewModel: MovieDetailsViewModelProtocol>: View {
             .onAppear(perform: viewModel.configure)
     }
     
-
     @ViewBuilder
     private func contentView(with state: MovieDetailsState) -> some View {
         switch state {
@@ -64,7 +63,6 @@ struct MovieDetailsView<ViewModel: MovieDetailsViewModelProtocol>: View {
                     .font(.callout)
             }
         }
-        
    }
 }
 

@@ -14,8 +14,8 @@ struct MovieDetailsRequest: URLRequestConvertible {
     
     // MARK: - Properties
     
-    let httpMethod: HTTPMethod = .get
-    var movieId: Int
+    private let httpMethod: HTTPMethod = .get
+    private var movieId: Int
     
     // MARK: - Init
     
@@ -26,7 +26,7 @@ struct MovieDetailsRequest: URLRequestConvertible {
     // MARK: - Methods
     
     func asURLRequest() -> URLRequest {
-        var urlComponents = URLComponents(url: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)")!, resolvingAgainstBaseURL: false)
+        var urlComponents = URLComponents(url: URL(string: NetworkConstants.baseUrl.rawValue + "/movie/\(movieId)")!, resolvingAgainstBaseURL: false)
         urlComponents?.queryItems = [URLQueryItem]()
         
         let parameters = ["language": "en-US"]
@@ -36,11 +36,10 @@ struct MovieDetailsRequest: URLRequestConvertible {
             urlComponents?.queryItems?.append(queryItem)
         }
         
-        var request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie")!)
+        var request = URLRequest(url: URL(string: NetworkConstants.baseUrl.rawValue + "/movie")!)
         request.url = urlComponents?.url
         request.httpMethod = httpMethod.rawValue
-        request.allHTTPHeaderFields = ["Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNWI5YjFhZTgyOGJmNDkwZTM0NGVjZTFjNTM2YzgxNyIsInN1YiI6IjY0ZWQyMWI0ZTg5NGE2MDBlNGU3ZTFlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KUoW6JAkKzKokW5wHJvNZQNniOzR-kzaW9ehjDXLOl0"]
-        
+        request.allHTTPHeaderFields = ["Authorization": NetworkConstants.token.rawValue]
         return request
     }
     

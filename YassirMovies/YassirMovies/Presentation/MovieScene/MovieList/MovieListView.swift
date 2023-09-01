@@ -16,20 +16,17 @@ struct MovieListView<ViewModel: MovieListViewModelProtocol>: View {
     @ObservedObject private var viewModel: ViewModel
     
     var body: some View {
-        
         NavigationView {
             if let state = viewModel.state {
                 contentView(with: state) { movieId in
                     viewModel.didSelectedMovie(id: movieId)
                 }
-                
             }
-                
         }
         .navigationTitle("Trending Movies")
         .onAppear(perform: viewModel.configure)
     }
-   
+    
     @ViewBuilder
     private func contentView(with state: MovieListState, withAction action: @escaping (Int) -> Void) -> some View {
         switch state {
@@ -59,7 +56,7 @@ struct MovieListView<ViewModel: MovieListViewModelProtocol>: View {
                     }
             }
         }
-   }
+    }
 }
 
 struct MovieListView_Previews: PreviewProvider {

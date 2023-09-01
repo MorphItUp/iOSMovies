@@ -34,17 +34,11 @@ final class MovieListViewModel: MovieListViewModelProtocol, MovieListViewModelRo
 
     // MARK: - Init
     
-    init(
-        movieListUseCase: MovieListUseCaseProtocol
-    ) {
+    init(movieListUseCase: MovieListUseCaseProtocol) {
         self.movieListUseCase = movieListUseCase
     }
     
     // MARK: - Requests
-    
-    func didSelectedMovie(id: Int) {
-        selectedMovieHandler(id)
-    }
     
     func configure() {
         movieListUseCase.execute()
@@ -62,5 +56,11 @@ final class MovieListViewModel: MovieListViewModelProtocol, MovieListViewModelRo
                 self.state = .content(movies)
             }
             .store(in: &subscriptions)
+    }
+    
+    // MARK: - Methods
+    
+    func didSelectedMovie(id: Int) {
+        selectedMovieHandler(id)
     }
 }
