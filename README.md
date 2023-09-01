@@ -27,4 +27,4 @@ Yassir Networking Local SPM
 
 ## Requirements
 
-Xcode Version 11.2.1+ Swift 5.0+
+Xcode Version 14.3.1+
