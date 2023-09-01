@@ -47,7 +47,7 @@ struct MovieListView<ViewModel: MovieListViewModelProtocol>: View {
     }
     
     private func makeErrorView(model: Error) -> some View {
-        ProgressView()
+        AlertView(showingAlert: true, message: model.localizedDescription)
     }
     
     private func makeMovieListView(movies: [MovieModel], didSelectMovie: @escaping (Int) -> Void) -> some View {

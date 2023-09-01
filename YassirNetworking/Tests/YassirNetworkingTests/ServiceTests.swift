@@ -29,7 +29,7 @@ class ServiceTests: XCTestCase {
     
     func testMakeRequest_backendFailure() {
         urlSessionMock.error = NSError(domain: "backend", code: 100)
-        let request = VenueListRequestMock()
+        let request = MovieListRequestMock()
         let expectation = expectation(description: "makeRequest_backendFailure")
         
         sut.makeRequest(request: request) { result in
@@ -47,7 +47,7 @@ class ServiceTests: XCTestCase {
     func testMakeRequest_decodingError() {
         urlSessionMock.error = nil
         urlSessionMock.data = Data()
-        let request = VenueListRequestMock()
+        let request = MovieListRequestMock()
         let expectation = expectation(description: "makeRequest_decodingError")
         
         sut.makeRequest(request: request) { result in
@@ -67,7 +67,7 @@ class ServiceTests: XCTestCase {
         let dataMock = try? JSONEncoder().encode(entityMock)
         urlSessionMock.data = dataMock
         
-        let request = VenueListRequestMock()
+        let request = MovieListRequestMock()
         let expectation = expectation(description: "makeRequest_success")
         
         sut.makeRequest(request: request) { result in

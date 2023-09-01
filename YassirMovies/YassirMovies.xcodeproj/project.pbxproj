@@ -32,6 +32,9 @@
 		895A9FFA2A9F3E0C00BA6D39 /* MovieDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FF92A9F3E0C00BA6D39 /* MovieDetailsRequest.swift */; };
 		895A9FFC2A9F423700BA6D39 /* MovieDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A9FFB2A9F423700BA6D39 /* MovieDetailsEntity.swift */; };
 		896AA7102AA26F45001821C1 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AA70F2AA26F45001821C1 /* AlertView.swift */; };
+		896AA7122AA27569001821C1 /* MovieListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AA7112AA27569001821C1 /* MovieListViewModelTests.swift */; };
+		896AA7142AA279BB001821C1 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AA7132AA279BB001821C1 /* MovieDetailsViewModelTests.swift */; };
+		896AA7162AA27C58001821C1 /* MovieDetailsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AA7152AA27C58001821C1 /* MovieDetailsUseCaseMock.swift */; };
 		89AE59572A9BF0CC0008FD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE59562A9BF0CC0008FD12 /* Assets.xcassets */; };
 		89AE595A2A9BF0CC0008FD12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AE59592A9BF0CC0008FD12 /* Preview Assets.xcassets */; };
 		89AE596E2A9BF0CC0008FD12 /* YassirMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE596D2A9BF0CC0008FD12 /* YassirMoviesUITests.swift */; };
@@ -83,6 +86,9 @@
 		895A9FFB2A9F423700BA6D39 /* MovieDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsEntity.swift; sourceTree = "<group>"; };
 		896AA70E2AA268B6001821C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		896AA70F2AA26F45001821C1 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		896AA7112AA27569001821C1 /* MovieListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTests.swift; sourceTree = "<group>"; };
+		896AA7132AA279BB001821C1 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		896AA7152AA27C58001821C1 /* MovieDetailsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsUseCaseMock.swift; sourceTree = "<group>"; };
 		89AE594F2A9BF0CA0008FD12 /* YassirMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE59562A9BF0CC0008FD12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89AE59592A9BF0CC0008FD12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		8903D8532AA00431004034D5 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				896AA7152AA27C58001821C1 /* MovieDetailsUseCaseMock.swift */,
 				8903D8542AA00464004034D5 /* MovieListUseCaseMock.swift */,
 				8903D8562AA00541004034D5 /* ServiceMock.swift */,
 				8903D8582AA00695004034D5 /* DecodableEntityMock.swift */,
@@ -330,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				8903D8532AA00431004034D5 /* Mock */,
+				896AA7112AA27569001821C1 /* MovieListViewModelTests.swift */,
+				896AA7132AA279BB001821C1 /* MovieDetailsViewModelTests.swift */,
 			);
 			path = YassirMoviesTests;
 			sourceTree = "<group>";
@@ -515,8 +524,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8903D8572AA00541004034D5 /* ServiceMock.swift in Sources */,
+				896AA7142AA279BB001821C1 /* MovieDetailsViewModelTests.swift in Sources */,
 				8903D8552AA00464004034D5 /* MovieListUseCaseMock.swift in Sources */,
 				8903D8592AA00695004034D5 /* DecodableEntityMock.swift in Sources */,
+				896AA7122AA27569001821C1 /* MovieListViewModelTests.swift in Sources */,
+				896AA7162AA27C58001821C1 /* MovieDetailsUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
