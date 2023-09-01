@@ -8,23 +8,27 @@
 import Combine
 
 protocol MovieDetailsUseCaseProtocol {
-    func execute(withId movieId: Int) -> AnyPublisher<MovieDetailsModel?, Error>
+    func execute() -> AnyPublisher<MovieDetailsModel?, Error>
+    var movieId: Int { get set }
 }
 
 final class MovieDetailsUseCase: MovieDetailsUseCaseProtocol {
+    
     // MARK: - Private Properties
     
     private let movieDetailsRepo: MovieDetailsRepositoryProtocol
+    var movieId: Int
     
     // MARK: - Init
     
-    init(movieDetailsRepo: MovieDetailsRepositoryProtocol) {
+    init(movieDetailsRepo: MovieDetailsRepositoryProtocol, movieId: Int) {
         self.movieDetailsRepo = movieDetailsRepo
+        self.movieId = movieId
     }
     
     // MARK: - Methods
     
-    func execute(withId movieId: Int) -> AnyPublisher<MovieDetailsModel?, Error> {
+    func execute() -> AnyPublisher<MovieDetailsModel?, Error> {
         movieDetailsRepo.getMovieDetails(withId: movieId)
     }
 }

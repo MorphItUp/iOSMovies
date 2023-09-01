@@ -16,7 +16,7 @@ struct MovieDetailsEntity: Codable {
     let revenue: Int
     let runtime: Int
     let title: String
-    let voteAverage: Double
+    let voteAverage: Float
     let voteCount: Int
     
     enum CodingKeys: String, CodingKey {
@@ -28,8 +28,8 @@ struct MovieDetailsEntity: Codable {
         case revenue
         case runtime
         case title
-        case voteAverage
-        case voteCount
+        case voteAverage = "vote_average"
+        case voteCount = "vote_count"
     }
 }
 

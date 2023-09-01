@@ -7,40 +7,51 @@
 
 import Combine
 
-final class MovieDetailsViewModel: ObservableObject {
+enum MovieDetailsState {
+    case loading
+    case content(MovieDetailsModel)
+    case error(Error)
+}
+
+protocol MovieDetailsViewModelProtocol: ObservableObject {
+    func configure()
+    var state: MovieDetailsState? { get }
+}
+
+protocol MovieDetailsViewModelRouterProtocol {}
+
+final class MovieDetailsViewModel: MovieDetailsViewModelProtocol, MovieDetailsViewModelRouterProtocol {
     
     // MARK: - Private Properties
     
     private var subscriptions = Set<AnyCancellable>()
     private let movieDetailsUseCase: MovieDetailsUseCaseProtocol
-    
-    let errorMessageSubject = CurrentValueSubject<String, Never>("Unknown error occured")
-    let errorSubject = PassthroughSubject<Void, Never>()
-    @Published var movieDetails: MovieDetailsModel?
+    @Published private (set) var state: MovieDetailsState? = .loading
     
     // MARK: - Init
     
-    init(movieDetailsUseCase: MovieDetailsUseCaseProtocol) {
+    init(
+        movieDetailsUseCase: MovieDetailsUseCaseProtocol
+    ) {
         self.movieDetailsUseCase = movieDetailsUseCase
     }
     
     // MARK: - Requests
     
-    func requestMovieDetails(withId movieId: Int) {
-        movieDetailsUseCase.execute(withId: movieId)
+    func configure() {
+        movieDetailsUseCase.execute()
             .sink { [weak self] error in
                 guard let self else { return }
                 switch error {
                 case .finished:
                     break
-                case .failure:
-                    self.errorSubject.send()
-                    self.errorMessageSubject.send("Unknown error occured")
+                case .failure(let error):
+                    self.state = .error(error)
                 }
             } receiveValue: { [weak self] movieDetails in
                 guard let self,
                       let movieDetails else { return }
-                self.movieDetails = movieDetails
+                self.state = .content(movieDetails)
             }
             .store(in: &subscriptions)
     }

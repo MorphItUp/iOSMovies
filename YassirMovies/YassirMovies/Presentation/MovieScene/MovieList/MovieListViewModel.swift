@@ -7,41 +7,59 @@
 
 import Combine
 
-final class MovieListViewModel: ObservableObject {
+enum MovieListState {
+    case loading
+    case content([MovieModel])
+    case error(Error)
+}
+
+protocol MovieListViewModelProtocol: ObservableObject {
+    func configure()
+    func didSelectedMovie(id: Int)
+    var state: MovieListState? { get }
+}
+
+protocol MovieListViewModelRouterProtocol {
+    var selectedMovieHandler: (Int) -> Void { get set }
+}
+
+final class MovieListViewModel: MovieListViewModelProtocol, MovieListViewModelRouterProtocol {
     
     // MARK: - Private Properties
     
     private var subscriptions = Set<AnyCancellable>()
     private let movieListUseCase: MovieListUseCaseProtocol
-    
-    let errorMessageSubject = CurrentValueSubject<String, Never>("Unknown error occured")
-    let errorSubject = PassthroughSubject<Void, Never>()
-    @Published var movies: [MovieModel] = []
-    
+    internal var selectedMovieHandler: (Int) -> Void = { _ in }
+    @Published private (set) var state: MovieListState? = .loading
+
     // MARK: - Init
     
-    init(movieListUseCase: MovieListUseCaseProtocol) {
+    init(
+        movieListUseCase: MovieListUseCaseProtocol
+    ) {
         self.movieListUseCase = movieListUseCase
-        self.requestMovieList()
     }
     
     // MARK: - Requests
     
-    func requestMovieList() {
+    func didSelectedMovie(id: Int) {
+        selectedMovieHandler(id)
+    }
+    
+    func configure() {
         movieListUseCase.execute()
             .sink { [weak self] error in
                 guard let self else { return }
                 switch error {
                 case .finished:
                     break
-                case .failure:
-                    self.errorSubject.send()
-                    self.errorMessageSubject.send("Unknown error occured")
+                case .failure(let error):
+                    self.state = .error(error)
                 }
             } receiveValue: { [weak self] movies in
                 guard let self,
                       let movies else { return }
-                self.movies = movies
+                self.state = .content(movies)
             }
             .store(in: &subscriptions)
     }
