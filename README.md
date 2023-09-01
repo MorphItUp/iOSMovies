@@ -1,14 +1,14 @@
 ## Architecture
 
-Implemented with Clean Layered Architecture and MVVM
+Implemented with Clean Layered Architecture and MVVM-C
 
-MVVM + Combine/SwiftUI
+MVVM-C + Combine/SwiftUI
 
 ## Layers
 
 * Domain Layer = Entities + Use Cases + Repositories Interfaces
 * Data Repositories Layer = Repository Implementation + API
-* Presentation Layer = ViewModels + Views
+* Presentation Layer = ViewModels + Views (Coordinators to handle navigation flow)
 
 ## Architecture Concepts
 
@@ -27,4 +27,4 @@ Yassir Networking Local SPM
 
 ## Requirements
 
-Xcode Version 14.3.1+
+Xcode Version 14.3.1+ 
