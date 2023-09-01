@@ -42,15 +42,30 @@ struct MovieDetailsView<ViewModel: MovieDetailsViewModelProtocol>: View {
     }
     
     private func makeMovieDetailsView(movie: MovieDetailsModel) -> some View {
-        VStack {
-            AsyncImage(url: URL(string: "http://image.tmdb.org/t/p/w500/" + movie.posterPath), scale: 2)
-                .scaledToFit()
-                .frame(width: 25, height: 25)
-                .padding()
-            Text(movie.title)
+        ScrollView {
+            VStack(spacing: 10) {
+                AsyncImage(url: URL(string: "http://image.tmdb.org/t/p/w780/" + movie.posterPath), scale: 2.2)
+                    .cornerRadius(20)
+                    .scaledToFit()
+                    .frame(alignment: .top)
+                    .shadow(radius: 25)
+                    .padding()
+                Spacer()
+                Text(movie.title)
+                    .font(.title)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(5)
+                
+                Text(movie.overview)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(5)
+                    .font(.callout)
+            }
         }
+        
    }
-    
 }
 
 
